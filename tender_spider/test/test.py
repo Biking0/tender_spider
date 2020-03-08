@@ -49,9 +49,8 @@ headers = {
 # url = 'https://1432581998.rsc.cdn77.org/1545221401/480P_600K_145507422-0000.ts'
 # response = requests.request("GET", url, data=payload,proxies=ip_proxies, headers=headers, params=querystring)
 url = 'http://www.hngp.gov.cn/henan/list2?channelCode=0101&pageSize=16&bz=1&gglx=0&pageNo=1'
-#response = requests.request("GET", url, headers=headers)
+# response = requests.request("GET", url, headers=headers)
 response = requests.request("GET", url, headers=headers)
 
 # response=requests.get(url)
 print(response.text)
-

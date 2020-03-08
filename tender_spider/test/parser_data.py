@@ -1,5 +1,5 @@
 # encoding=utf8
-# demo test for tender spider
+# 测试，解析公告简略信息
 # by hyn
 # 20200106
 
@@ -29,8 +29,8 @@ def parser(response):
 
     url_list = soup.find('div', attrs={'class': 'List2'}).find_all('li')  # 找到class="wrap"的div里面的所有<img>标签
 
-    # url_list
-
+    # 公告简略信息列表
+    print(url_list)
     print(url_list[0])
 
     # print(url_list[0].attrs['href'])

@@ -24,6 +24,10 @@ def parser(response):
     # print()
     soup = BeautifulSoup(response, 'lxml')
 
+    # 公告名字
+    name = soup('h1')[0].string
+    print(name)
+
     # 内容url
     content_url = config.common_url + soup('script')[1].string.split('"')[1]
 
@@ -42,8 +46,25 @@ def parser(response):
     # print(soup('td')[0].string)
 
     # 解析详细内容
-    for i in content_soup('td'):
-        print(i.string)
+    content_data = ''
+    # for i in content_soup('td'):
+
+    for i in range(len(content_soup('td'))):
+        # print(content_soup('td')[i].string)
+        if not i == 0:
+            content_data = content_data + '/ ' + str(content_soup('td')[i].string).replace(' ', '')
+        else:
+            content_data = str(content_soup('td')[i].string)
+
+    print('公告详细信息')
+    print(content_data)
+
+    content_data_list=[]
+    content_data_list.append(name)
+    content_data_list.append(content_data)
+
+    # 入库
+    save_data.save_content_data(content_data_list)
 
     # url_list = soup.find('div', attrs={'class': 'List2'}).find_all('li')  # 找到class="wrap"的div里面的所有<img>标签
     #

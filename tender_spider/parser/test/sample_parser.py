@@ -50,10 +50,5 @@ def parser(response):
 
         # break
 
-    sample_info_list
-
     # 入库
-    save_data.save_data(sample_info_list)
-
-
-
+    save_data.save_sample_data(sample_info_list)

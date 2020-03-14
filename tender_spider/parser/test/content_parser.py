@@ -12,6 +12,7 @@ from lxml import etree
 import tender_spider.config as config
 import tender_spider.conn_db.test.save_data as save_data
 import tender_spider.config
+from tender_spider.get_data.test.get_data import get_data
 
 
 def parser(response):
@@ -24,21 +25,25 @@ def parser(response):
     soup = BeautifulSoup(response, 'lxml')
 
     # 内容url
-    content_url=config.common_url+soup('script')[1].string.split('"')[1]
-
-    print(content_url)
+    content_url = config.common_url + soup('script')[1].string.split('"')[1]
 
     # for i in soup('script')[1].string.split('"'):
     #     print(i)
     #     print('##############')
 
+    print(content_url)
+
+    # 获取详细信息
+    result_data = get_data(content_url)
+
+    content_soup = BeautifulSoup(result_data, 'lxml')
 
     # print(soup('table'))
     # print(soup('td')[0].string)
 
     # 解析详细内容
-    # for i in soup('td'):
-    #     print(i.string)
+    for i in content_soup('td'):
+        print(i.string)
 
     # url_list = soup.find('div', attrs={'class': 'List2'}).find_all('li')  # 找到class="wrap"的div里面的所有<img>标签
     #
@@ -77,6 +82,3 @@ def parser(response):
     #
     # # 入库
     # save_data.save_data(sample_info_list)
-
-
-

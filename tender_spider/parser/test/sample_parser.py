@@ -21,7 +21,7 @@ def parser(response):
 
     # 公告简略信息列表
     # print(url_list)
-    print(url_list[0])
+    # print(url_list[0])
     # print(type(url_list[0]))
     # print(url_list[0]('a'))
 

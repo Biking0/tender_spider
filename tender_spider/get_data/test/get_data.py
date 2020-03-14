@@ -4,12 +4,20 @@
 # 20200314
 
 import requests
+import time
+import random
 
-#url = 'http://www.hngp.gov.cn/henan/list2?channelCode=0101&pageSize=16&bz=1&gglx=0&pageNo=1'
+
+# url = 'http://www.hngp.gov.cn/henan/list2?channelCode=0101&pageSize=16&bz=1&gglx=0&pageNo=1'
 
 
 # 通用网络请求方法
 def get_data(url):
-    response = requests.request("GET", url)
+    try:
+        response = requests.request("GET", url)
 
-    return response.content
+        return response.content
+    except Exception as e:
+        time.sleep(random.randint(5,20))
+
+        print(e)

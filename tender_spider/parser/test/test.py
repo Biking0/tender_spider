@@ -9,18 +9,19 @@ from tender_spider.get_data.test.get_data import get_data
 import time
 
 # 获取简略信息
-for i in range(1, 611):
-    url = 'http://www.hngp.gov.cn/henan/list2?channelCode=0101&pageSize=16&bz=1&gglx=0&pageNo='+str(i)
-    print('#############',i)
-    result_data = get_data(url)
-    sample_parser.parser(result_data)
-    time.sleep(6)
+# for i in range(1, 2):
+#     url = 'http://www.hngp.gov.cn/henan/list2?channelCode=0101&pageSize=16&bz=1&gglx=0&pageNo='+str(i)
+#     print('#############',i)
+#     result_data = get_data(url)
+#     sample_parser.parser(result_data)
+#     time.sleep(2)
 
 # 获取详细信息
 # url = 'http://www.hngp.gov.cn/henan/content?infoId=423717&channelCode=H600101'
-# #
-# # # 获取详细地址，
-# # result_data = get_data(url)
-# # content_parser.parser(result_data)
+url = 'http://www.hngp.gov.cn//henan/content?infoId=439852&channelCode=H600101'
+
+# 获取详细地址，
+result_data = get_data(url)
+content_parser.parser(result_data)
 
 # 获取公告详细信息

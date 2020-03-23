@@ -52,3 +52,4 @@ def parser(response):
 
     # 入库
     save_data.save_sample_data(sample_info_list)
+    return sample_info_list

@@ -22,7 +22,15 @@ def main():
         url=config.pro_page_url+str(i)
         print('正在爬取，第',i,'页',url)
         response=get_data(url)
-        sample_parser.parser(response)
+        sample_info_list=sample_parser.parser(response)
+
+        # 入库详细信息
+        for j in sample_info_list:
+
+            print('入库详细信息')
+            print(j)
+            response_content=get_data(j[4])
+            content_parser.parser(response_content)
 
 
 

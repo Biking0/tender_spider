@@ -3,6 +3,11 @@
 # by hyn
 # 20200308
 
+import os
+import sys
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
+
 # 通用地址url
 common_url = 'http://www.hngp.gov.cn/'
 

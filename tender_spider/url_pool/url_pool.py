@@ -2,7 +2,10 @@
 # 生成简略信息url池，请求网络，调用简略信息解析，调用详细信息，
 # by hyn
 # 20200322
+import os
+import sys
 
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
 from bs4 import BeautifulSoup
 import tender_spider.config as config
 from tender_spider.get_data.test.get_data import get_data

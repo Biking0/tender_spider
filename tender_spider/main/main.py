@@ -5,6 +5,14 @@
 
 
 # 构造url，根据url获取书数据，调用简略解析，调用详细解析
+import os
+import sys
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
+
+#sys.path.append('D:/python_project/test_pwd/common')
+sys.path.append('D:/project/github/tender_spider')
+
 from tender_spider.url_pool import url_pool  as url_pool
 import tender_spider.config as config
 from tender_spider.get_data.test.get_data import get_data

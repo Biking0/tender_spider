@@ -3,6 +3,11 @@
 # by hyn
 # 20200314
 
+import os
+import sys
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
+
 import requests
 import time
 import random

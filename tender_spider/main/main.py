@@ -20,6 +20,7 @@ import tender_spider.parser.test.sample_parser as sample_parser
 import tender_spider.parser.test.content_parser as content_parser
 
 
+
 # 构造url，根据url获取书数据，调用简略解析，调用详细解析
 def main():
     pro_totalpage=url_pool.pro_totalpage()
@@ -28,7 +29,21 @@ def main():
     print('开始爬取，总页数：',pro_totalpage)
     for i in range(1,pro_totalpage):
         url=config.pro_page_url+str(i)
-        print('正在爬取，第',i,'页',url)
+        print('正在爬取省级公告，第',i,'页',url)
+        response=get_data(url)
+        sample_info_list=sample_parser.parser(response)
+
+        # 入库详细信息
+        for j in sample_info_list:
+
+            print('入库详细信息')
+            print(j)
+            response_content=get_data(j[4])
+            content_parser.parser(response_content)
+
+    for i in range(1,pro_totalpage):
+        url=config.pro_page_url+str(i)
+        print('正在爬取市县区公告，第',i,'页',url)
         response=get_data(url)
         sample_info_list=sample_parser.parser(response)
 

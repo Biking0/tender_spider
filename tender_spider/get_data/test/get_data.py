@@ -23,6 +23,6 @@ def get_data(url):
 
         return response.content
     except Exception as e:
-        time.sleep(random.randint(5,20))
+        time.sleep(random.randint(5, 20))
 
         print(e)

@@ -13,6 +13,6 @@ sys.path.append('D:/project/github/tender_spider')
 sys.path.append('D:/tender_spider')
 
 from tender_spider.main import main
- 
+
 if __name__ == "__main__":
     main.main() 

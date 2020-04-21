@@ -36,8 +36,3 @@ def city_totalpage():
     city_totalpage = int(re.findall("\d+", city_totalpage_str)[0])
     print(city_totalpage)
     return
-
-
-
-pro_totalpage()
-city_totalpage()

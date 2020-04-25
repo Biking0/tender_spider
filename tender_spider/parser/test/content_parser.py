@@ -8,7 +8,7 @@ import urllib.request
 import simplejson
 from bs4 import BeautifulSoup
 import requests
-from lxml import etree
+
 import tender_spider.config as config
 import tender_spider.conn_db.test.save_data as save_data
 import tender_spider.config

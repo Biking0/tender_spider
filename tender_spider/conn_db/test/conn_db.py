@@ -14,7 +14,6 @@ def conn(sql):
 
     # 执行SQL语句
     cursor.execute(sql)
-
     result = cursor.fetchall()
 
     # 关闭光标对象

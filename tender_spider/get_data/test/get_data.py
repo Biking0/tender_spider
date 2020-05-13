@@ -14,9 +14,6 @@ import random
 from fake_useragent import UserAgent
 
 
-# url = 'http://www.hngp.gov.cn/henan/list2?channelCode=0101&pageSize=16&bz=1&gglx=0&pageNo=1'
-
-
 # 通用网络请求方法
 def get_data(url):
     try:

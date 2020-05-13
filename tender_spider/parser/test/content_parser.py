@@ -16,12 +16,7 @@ from tender_spider.get_data.test.get_data import get_data
 
 
 def parser(response):
-    # 修改编码
 
-    # print(response)
-    # response=response.encode(encoding='utf-8')
-
-    # print()
     soup = BeautifulSoup(response, 'lxml')
 
     # 公告名字
@@ -30,10 +25,6 @@ def parser(response):
 
     # 内容url
     content_url = config.common_url + soup('script')[1].string.split('"')[1]
-
-    # for i in soup('script')[1].string.split('"'):
-    #     print(i)
-    #     print('##############')
 
     print(content_url)
 

@@ -47,7 +47,6 @@ def parser(response):
         print(sample_info_data)
 
         sample_info_list.append(sample_info_data)
-
         # break
 
     # 入库

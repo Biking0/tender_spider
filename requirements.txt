@@ -28,7 +28,7 @@ pytz==2019.3
 pywin32==225
 queuelib==1.5.0
 requests==2.22.0
-Scrapy==1.8.0
+Scrapy==2.6.1
 selenium==3.141.0
 service-identity==18.1.0
 simplejson==3.17.0
